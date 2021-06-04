@@ -16,8 +16,22 @@ function euclidean(a, b) {
      * Also take into consideration the documentation of the function!
      */
     // PLACE YOUR CODE BETWEEN THIS...
+    if (a < 1 || b < 1 ){
+        return 0
+
+    }
+    if (b > a){
+    [a,b] = [b,a]
+
+    }
+    
+    while (b > 0){
+    
+    [a , b] = [b , a%b]
 
 
+    }
+    gcd=a
     // ...AND THIS COMMENT LINE!
     return gcd;
 }

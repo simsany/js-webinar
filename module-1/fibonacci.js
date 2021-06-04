@@ -15,7 +15,11 @@ function fibonacci(n) {
      * Also take into consideration the documentation of the function!
      */
     // PLACE YOUR CODE BETWEEN THIS...
+    if (n < 0){
+            return 0
 
+    }
+    nThFibonacci = parseInt((Math.pow(1+Math.sqrt(5),n)-Math.pow(1-Math.sqrt(5),n)) / (Math.sqrt(5)*Math.pow(2,n)))
     // ...AND THIS COMMENT LINE!
     return nThFibonacci;
 }

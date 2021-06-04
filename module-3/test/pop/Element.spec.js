@@ -66,6 +66,7 @@ describe('Element Class', () => {
             element.addChildren(child);
 
             expect(element.children.Title).to.eql(child);
+			
         });
 
         it('should not add children twice', () => {

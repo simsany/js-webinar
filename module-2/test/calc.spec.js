@@ -17,5 +17,43 @@ describe.only('calc', () => {
      *     .times(6).v // 24
      */
     // TODO: write test cases to test calculator
+	
+	it("should return 3", () => {
+        return expect(calc(3).v).to.equal(3);
+    });
+	
+	it("should return 8", () => {
+        return expect(calc(3).add(5).v).to.equal(8);
+    });
+	
+	it("should return 1", () => {
+        return expect(calc(3).minus(2).v).to.equal(1);
+    });
+	
+	it("should return 2", () => {
+        return expect(calc(4).sqrt().v).to.equal(2);
+    });
+	
+	it("should return 30", () => {
+        return expect(calc(3).times(10).v).to.equal(30);
+    });
+	
+	it("should return 5", () => {
+        return expect(calc(10).divide(2).v).to.equal(5);
+    });
+	
+	
+	it("should throw an error", () => {
+        return expect(() =>calc(5).divide(0)).to.throw();
+    });
+	
+	it("should throw an error", () => {
+        return expect(() =>calc(-3).sqrt()).to.throw();
+    });
+	
+	it("should return 5", () => {
+        return expect(calc(3).add(4).minus(3).times(6).v).to.equal(24);
+    });
+	
 
 });

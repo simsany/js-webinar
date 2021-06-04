@@ -1,3 +1,4 @@
+
 /**
  * Create Element class, which represents an element of
  * the application, and
@@ -15,4 +16,59 @@
  *       the given name or throws an Erorr if it cannot
  *       find the element
  */
-module.exports = class Element {}
+
+module.exports = class Element {
+	constructor(name, locator) {
+		this.locator = locator
+		this.name = name
+		this.parent = null
+		this.setParent = function (parent) { this.parent = parent }
+		this.children = {}
+
+
+		this.addChildren = function (child) {
+			let child_to_assign = {};
+			child_to_assign[child.name] = child;
+			if (Object.keys(this.children).includes(child.name)) { throw new Error() };
+			this.children = Object.assign(this.children, child_to_assign);
+		}
+
+
+
+		this.get = function (locator) {
+			if (!locator){
+
+				return element(this.locator)
+
+			}
+			
+
+			let locatorToReturn;
+			function find (obj,locator){
+				
+		Object.keys(obj).forEach(key => {
+			if (key == locator) {
+				locatorToReturn = obj[key]
+				}
+			if (typeof obj[key] == 'object' && obj[key] != null) {
+				find(obj[key], locator)
+				}
+			})
+				
+				return locatorToReturn;
+				
+				}
+			if(!find(this.children,locator).locator){
+				throw new Error()
+
+
+			}
+			return element(find(this.children,locator).locator)
+
+			
+			
+		}
+	}
+
+
+}
