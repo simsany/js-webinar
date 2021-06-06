@@ -20,7 +20,8 @@ function fibonacci(n) {
 
     }
     nThFibonacci = parseInt((Math.pow(1+Math.sqrt(5),n)-Math.pow(1-Math.sqrt(5),n)) / (Math.sqrt(5)*Math.pow(2,n)))
+	return nThFibonacci;
     // ...AND THIS COMMENT LINE!
-    return nThFibonacci;
+    
 }
 module.exports = fibonacci;

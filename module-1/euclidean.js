@@ -32,7 +32,8 @@ function euclidean(a, b) {
 
     }
     gcd=a
-    // ...AND THIS COMMENT LINE!
     return gcd;
+    // ...AND THIS COMMENT LINE!
+   
 }
 module.exports = euclidean;

@@ -42,7 +42,8 @@ function grade(score) {
         default:
           gradeOfStudent = 5;
       }
+	  return gradeOfStudent;
     // ...AND THIS COMMENT LINE!
-    return gradeOfStudent;
+    
 }
 module.exports = grade;
