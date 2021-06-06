@@ -17,43 +17,110 @@ describe.only('calc', () => {
      *     .times(6).v // 24
      */
     // TODO: write test cases to test calculator
-	
-	it("should return 3", () => {
-        return expect(calc(3).v).to.equal(3);
+    
+    
+    describe("should have proper value", () => {
+        
+        it("should return proper value", () => {
+            
+            return expect(calc(3).v).to.equal(3);
+        });
     });
-	
-	it("should return 8", () => {
-        return expect(calc(3).add(5).v).to.equal(8);
+
+    describe("add", () => {
+
+        it("should exist", () => {
+            
+            return expect(calc(3).add(3)).not.to.be.undefined;
+        });
+
+        it("should be able to perform addition to a given number", () => {
+            
+            return expect(calc(3).add(5).v).to.equal(8);
+        });
     });
-	
-	it("should return 1", () => {
-        return expect(calc(3).minus(2).v).to.equal(1);
+
+
+
+    describe("minus", () => {
+
+        it("should exist", () => {
+            
+            return expect(calc(3).minus(3)).not.to.be.undefined;
+        });
+
+        it("should be able to perform substraction from a given number", () => {
+            
+            return expect(calc(3).minus(2).v).to.equal(1);
+        });
     });
-	
-	it("should return 2", () => {
-        return expect(calc(4).sqrt().v).to.equal(2);
+
+
+    describe("sqrt", () => {
+
+        it("should exist", () => {
+            
+            return expect(calc(3).sqrt()).not.to.be.undefined;
+        });
+
+        it("should be able to calculate the square root of a given number", () => {
+            
+            return expect(calc(4).sqrt().v).to.equal(2);
+        });
+
+        it("should handle square root of a negative number", () => {
+           
+            return expect(() => calc(-3).sqrt()).to.throw();
+        });
     });
-	
-	it("should return 30", () => {
-        return expect(calc(3).times(10).v).to.equal(30);
+
+
+
+
+    describe("times", () => {
+
+        it("should exist", () => {
+            
+            return expect(calc(3).times(5)).not.to.be.undefined;
+        });
+
+        it("should be able to  multiply a given number", () => {
+            
+            return expect(calc(3).times(10).v).to.equal(30);
+        });
     });
-	
-	it("should return 5", () => {
-        return expect(calc(10).divide(2).v).to.equal(5);
+
+
+
+
+    describe("divide", () => {
+
+        it("should exist", () => {
+            
+            return expect(calc(3).times(5)).not.to.be.undefined;
+        });
+
+        it("should be able to divide a given number", () => {
+            
+            return expect(calc(10).divide(2).v).to.equal(5);
+        });
+
+        it("should handle division by zero", () => {
+            
+            return expect(() => calc(5).divide(0)).to.throw();
+        });
     });
-	
-	
-	it("should throw an error", () => {
-        return expect(() =>calc(5).divide(0)).to.throw();
+
+
+
+
+
+    describe("chained operations", () => {
+
+        it("should able to perform chained operations", () => {
+            
+            return expect(calc(3).add(4).minus(3).times(6).v).to.equal(24);
+        });
     });
-	
-	it("should throw an error", () => {
-        return expect(() =>calc(-3).sqrt()).to.throw();
-    });
-	
-	it("should return 5", () => {
-        return expect(calc(3).add(4).minus(3).times(6).v).to.equal(24);
-    });
-	
 
 });
