@@ -6,7 +6,9 @@
  * @returns {number} Fibonacci number or 0 if any arguments are not proper
  */
 function fibonacci(n) {
-    let nThFibonacci;
+    let a=1;
+    let b=1;
+    let c=2;
     /*
      * Your task is to calculate the nth value of the
      * Fibonacci sequence.
@@ -19,9 +21,25 @@ function fibonacci(n) {
             return 0
 
     }
-    nThFibonacci = parseInt((Math.pow(1+Math.sqrt(5),n)-Math.pow(1-Math.sqrt(5),n)) / (Math.sqrt(5)*Math.pow(2,n)))
-	return nThFibonacci;
+
+    if (n < 2){
+        return 1
+
+}
+
+    for(let i=3;i<n;i++){
+
+        [a,b,c] =[b,c,b+c]
+
+    }
+
+ 
+
+	
+    
+   return c;
     // ...AND THIS COMMENT LINE!
     
 }
+console.log(fibonacci(3))
 module.exports = fibonacci;

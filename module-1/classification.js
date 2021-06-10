@@ -21,7 +21,7 @@ function grade(score) {
      * Also take into consideration the documentation of the function!
      */
     // PLACE YOUR CODE BETWEEN THIS...
-    if (score < 0 || score > 100){
+    if (!Number(score) ||score < 0 || score > 100){
         return 0
 
 
@@ -41,9 +41,14 @@ function grade(score) {
           break;
         default:
           gradeOfStudent = 5;
-      }
+    }
+      
+
+
 	  return gradeOfStudent;
     // ...AND THIS COMMENT LINE!
     
 }
+
+
 module.exports = grade;

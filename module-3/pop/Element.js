@@ -22,11 +22,14 @@ module.exports = class Element {
 		this.locator = locator
 		this.name = name
 		this.parent = null
-		this.setParent = function (parent) { this.parent = parent }
 		this.children = {}
+		}
+		setParent = function (parent) { this.parent = parent }
+		
 
 
-		this.addChildren = function (child) {
+		addChildren = function (child) {
+			
 			let child_to_assign = {};
 			child_to_assign[child.name] = child;
 			if (Object.keys(this.children).includes(child.name)) { throw new Error() };
@@ -35,7 +38,7 @@ module.exports = class Element {
 
 
 
-		this.get = function (locator) {
+		get = function (locator) {
 			if (!locator){
 
 				return element(this.locator)
@@ -68,7 +71,7 @@ module.exports = class Element {
 			
 			
 		}
-	}
+	
 
 
 }

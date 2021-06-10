@@ -13,4 +13,30 @@
  * 6. It has a method to retrieve one element from the collection
  *    by the locator (.get(n)) in it's context
  */
-module.exports = class Elements {}
+const Element = require('./Element')
+
+
+
+module.exports = class Elements extends Element{
+	constructor(name,locator){
+		super(name,locator)
+		this.children=null
+		delete this.addChildren
+		
+		
+	}
+	all=function (){
+		return element(this.locator)
+		
+	}
+	
+	get = function (param){
+		
+		return param
+		
+		
+		
+	}
+	
+	
+}
