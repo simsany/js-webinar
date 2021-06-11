@@ -22,11 +22,12 @@ this.getArea= function(){
 
 }
 
-this.getPerimeter= function(){
-return this.r*2*Math.PI
+
 
 
 }
+getPerimeter= function(){
+    return this.r*2*Math.PI
 }
 
 

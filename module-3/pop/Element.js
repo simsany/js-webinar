@@ -23,55 +23,52 @@ module.exports = class Element {
 		this.name = name
 		this.parent = null
 		this.children = {}
+	}
+	setParent = (parent) =>{ this.parent = parent }
+
+
+
+	addChildren = (child)=>{
+
+		 
+		if (this.children.hasOwnProperty(child.name)) { throw new Error() };
+		this.children[child.name] = child;
+	}
+
+
+
+	get = function (locator) {
+		if (!locator) {
+			return element(this.locator)
 		}
-		setParent = function (parent) { this.parent = parent }
-		
 
 
-		addChildren = function (child) {
-			
-			let child_to_assign = {};
-			child_to_assign[child.name] = child;
-			if (Object.keys(this.children).includes(child.name)) { throw new Error() };
-			this.children = Object.assign(this.children, child_to_assign);
-		}
+		let locatorToReturn;
+		function find(obj, locator) {
 
-
-
-		get = function (locator) {
-			if (!locator){
-
-				return element(this.locator)
-
-			}
-			
-
-			let locatorToReturn;
-			function find (obj,locator){
-				
-		Object.keys(obj).forEach(key => {
-			if (key == locator) {
-				locatorToReturn = obj[key]
+			Object.keys(obj).forEach(key => {
+				if (key == locator) {
+					locatorToReturn = obj[key]
 				}
-			if (typeof obj[key] == 'object' && obj[key] != null) {
-				find(obj[key], locator)
-				}
+				//if(JSON.stringify(obj[key].children) != '{}'){
+					find(obj[key].children, locator)
+				//}
 			})
-				
-				return locatorToReturn;
-				
-				}
-			if(!find(this.children,locator).locator){
-				throw new Error()
 
+			return locatorToReturn;
 
-			}
-			return element(find(this.children,locator).locator)
-
-			
-			
 		}
-	
+		if (!find(this.children, locator).locator) {
+			throw new Error()
+
+
+		}
+		return element(find(this.children, locator).locator)
+
+
+
+	}
+
 
 
 }

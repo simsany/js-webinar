@@ -21,7 +21,7 @@ module.exports = class Elements extends Element{
 	constructor(name,locator){
 		super(name,locator)
 		this.children=null
-		delete this.addChildren
+		this.addChildren=null
 		
 		
 	}
