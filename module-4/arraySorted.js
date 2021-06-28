@@ -13,7 +13,7 @@
  *                    false otherwise
  */
 function arraySorted(items, ignore="") {
-    return  items.map(word => word.toString().replace(new RegExp(`[${ignore}]`, 'g'), "")).map((item) => String(item).toLowerCase().replace(/\s/g, "")).every((item, index, arr) => !index || item >= arr[index - 1])
+    return  items.map(word => word.toString().toLowerCase().replace(new RegExp(`([${ignore}\\s])`, 'g'), "")).every((item, index, arr) => !index || item >= arr[index - 1])
 }
 
 module.exports = arraySorted
