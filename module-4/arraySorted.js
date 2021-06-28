@@ -12,14 +12,8 @@
  * @returns {boolean} true if the array is properly sorted,
  *                    false otherwise
  */
-function arraySorted(items, ignore) {
-    if (ignore) {
-        for (char of ignore) {
-            items = items.map((a) => a.replace(new RegExp(`[${char}]`, 'g'), ""));
-        }
-    }
-    items = items.map((item) => String(item).toLowerCase().replace(/\s/g, ""));
-    return items.every((item, index, arr) => !index || item >= arr[index - 1]);
+function arraySorted(items, ignore="") {
+    return  items.map(word => word.toString().replace(new RegExp(`[${ignore}]`, 'g'), "")).map((item) => String(item).toLowerCase().replace(/\s/g, "")).every((item, index, arr) => !index || item >= arr[index - 1])
 }
 
 module.exports = arraySorted
