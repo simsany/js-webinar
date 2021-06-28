@@ -6,36 +6,11 @@
  * @param {Array.<string>} strings
  * @returns {string} longest string or empty string in other cases
  */
-function longestString(arr){
-    if (arr.length<2 || !Array.isArray(arr)){
-        return ""
-
+function longestString(arr) {
+    if (!Array.isArray(arr) || arr.length < 2) {
+        return "";
     }
-
-    let longest="";
-
-    for (item of arr){
-        if(typeof item == 'string'){
-
-            if(!longest || longest.length < item.length || ((longest.length == item.length) && (item < longest)) ){
-
-                longest = item
-
-
-
-            }
-
-
-
-
-        }
-
-
-
-    }
-
-    return longest
-
+    return arr.reduce((a, b) => a.length >= b.length ? a > b ? b : a : b);
 }
 
-module.exports=longestString
+module.exports = longestString

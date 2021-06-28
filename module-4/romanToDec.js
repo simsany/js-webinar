@@ -8,58 +8,55 @@
  * @throws Error in case of invalid input
  */
 
-function romanToDec(roman){
-
-
-    let symbols={
-                    'I' : 1,
-                    'V' : 5,
-                    'X' : 10,
-                    'L' : 50,
-                    'C' : 100,
-                    'D' : 500,
-                    'M' : 1000
-}
-
-if(roman.split('').some(a=>!Object.keys(symbols).includes(a)) ){
-    
-    throw new Error("Invalid input!");
-
-
-
-}
-
-let dec=0;
-let previous=0;
-for (item of roman){
-    
-    if(previous<symbols[item]){
-        dec+= symbols[item]- 2*previous
-
-
+function romanToDec(roman) {
+    let symbols = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
     }
-    else{
 
-
-        dec+= symbols[item]
-
-    }
-    if(dec > 3999){
+    if (roman.split('').some(a => !Object.keys(symbols).includes(a))) {
         throw new Error("Invalid input!");
-
-
     }
-    previous=symbols[item]
 
-
-
-
+    let dec = 0;
+    let previous = 0;
+    roman.split('').forEach((element, index) => {
+        switch (true) {
+            case dec > 3999:
+                throw new Error("Invalid input!");
+    
+            case symbols[element] < symbols[roman[index + 1]]:
+                dec -= symbols[element];
+                break;
+    
+            default:
+                dec += symbols[element];
+                break;
+        }
+    });
+  
+    return dec
 }
+console.log(romanToDec('MDXCI'))
+module.exports = romanToDec
 
 
 
-
-return dec
-}
-
-module.exports=romanToDec
+ /* for (let  of roman){
+        if (!(previous < symbols[item])) {
+            dec += symbols[item]
+           
+        }
+        else {
+           dec +=symbols[item]- previous
+        }
+        if (dec > 3999){
+            throw new Error("Invalid input!");
+        }
+        previous = symbols[item]
+    }*/

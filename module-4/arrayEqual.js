@@ -11,32 +11,27 @@
  * @returns {boolean} true if the two arrays are equal,
  *                    false otherwise
  */
-function arrayEqual(first,second){
-if(first.length != second.length){
-    console.warn(`The length of the two array are different first: ${first.length}, second: ${second.length} `)
-    return false
 
+function arrayEqual(first, second) {
+    return  first.length !== second.length ? 
+            console.warn(`The length of the two array are different first: ${first.length}, second: ${second.length}`) || false 
+            :first.flat(Infinity).map(isEqual,second.flat(Infinity)).every(Boolean);        
 }
-let isEqual=true
-first=first.flat(Infinity)
-second=second.flat(Infinity)
-for(let i=0;i<first.length;i++){
-if(first[i] !== second[i] ){
-    isEqual=false
-    console.warn(`${first[i]} is not equal to ${second[i]}`)
-
-
-
-
-}
-
-
-
-}
-
-return isEqual
-
-
+function isEqual(item,index,arr){  
+    return arr[index] === this[index] || console.warn(`${arr[index]} is not equal to ${this[index]}`);
 }
 
 module.exports = arrayEqual;
+
+/*function arrayEqual(first, second) {
+    return  warnIfNotEqual(first,second);
+}
+function warnIfNotEqual(first,second){
+    let text = `The length of the two array are different first: ${first.length}, second: ${second.length}`;
+    return first.length !== second.length ? console.warn(text) || false : 
+           first.flat(Infinity).map(isEqual,second.flat(Infinity)).every(Boolean);
+}
+function isEqual(item,index,arr){  
+    return arr[index] === this[index] || console.warn(`${arr[index]} is not equal to ${this[index]}`);    
+}*/
+
