@@ -12,7 +12,7 @@
  * @returns {boolean} true if the array is properly sorted,
  *                    false otherwise
  */
-function arraySorted(items, ignore="") {
+function arraySorted(items, ignore) {
     return  items.map(word => word.toString().toLowerCase().replace(new RegExp(`([${ignore}\\s])`, 'g'), "")).every((item, index, arr) => !index || item >= arr[index - 1])
 }
 
