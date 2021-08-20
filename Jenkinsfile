@@ -34,11 +34,8 @@ pipeline {
             }
         }
 		
-		stage('module 5 tests') {
-            steps {
-               bat 'npm run test:module-5'
-            }
-        }
+		
+        
 		
 		stage('module plus tests') {
             steps {
