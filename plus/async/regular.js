@@ -8,7 +8,7 @@ async function wait() {
  * You need to call async wait() and wait to get 10 and return it
  * You can't use "await"!
  */
- function f() {
+module.exports = function f() {
     // ...what to write here?
 	
 	return wait()

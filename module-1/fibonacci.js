@@ -22,7 +22,7 @@ function fibonacci(n) {
 
     }
 
-    if (n < 2){
+    if (n <= 2){
         return 1
 
 }
@@ -41,5 +41,5 @@ function fibonacci(n) {
     // ...AND THIS COMMENT LINE!
     
 }
-console.log(fibonacci(3))
+
 module.exports = fibonacci;

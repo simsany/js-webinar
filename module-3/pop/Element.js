@@ -17,97 +17,58 @@
  *       find the element
  */
 
-/*module.exports = class Element {
+ module.exports = class Element {
 	constructor(name, locator) {
 		this.locator = locator
 		this.name = name
 		this.parent = null
+		this.setParent = function (parent) { this.parent = parent }
 		this.children = {}
-	}
-	setParent = (parent) => { this.parent = parent }
 
 
-
-	addChildren = (child) => {
-
-
-		if (this.children.hasOwnProperty(child.name)) { throw new Error() };
-		this.children[child.name] = child;
-	}
-
-
-
-	get = function (locator) {
-		if (!locator) {
-			return element(this.locator)
+		this.addChildren = function (child) {
+			let child_to_assign = {};
+			child_to_assign[child.name] = child;
+			if (Object.keys(this.children).includes(child.name)) { throw new Error() };
+			this.children = Object.assign(this.children, child_to_assign);
 		}
 
 
-		let locatorToReturn;
-		function find(obj, locator) {
 
-			Object.keys(obj).forEach(key => {
-				if (key == locator) {
-					locatorToReturn = obj[key]
+		this.get = function (locator) {
+			if (!locator){
+
+				return element(this.locator)
+
+			}
+			
+
+			let locatorToReturn;
+			function find (obj,locator){
+				
+		Object.keys(obj).forEach(key => {
+			if (key == locator) {
+				locatorToReturn = obj[key]
 				}
-				else {
-					if(obj[key].children.length === 0){
-					find(obj[key].children, locator)
-				}
+			if (typeof obj[key] == 'object' && obj[key] != null) {
+				find(obj[key], locator)
 				}
 			})
+				
+				return locatorToReturn;
+				
+				}
+			if(!find(this.children,locator).locator){
+				throw new Error()
 
-			return locatorToReturn;
 
+			}
+			return element(find(this.children,locator).locator)
+
+			
+			
 		}
-		if (!find(this.children, locator).locator) {
-			throw new Error()
-
-
-		}
-		return element(find(this.children, locator).locator)
-
-
-
 	}
 
 
-
 }
-*/
-
-class Dog{
-constructor(age,name){
-this.age=age
-this.name=name
-
-}
-
-static bark() {
-	console.log('vau')}
-
-
-}
-
-
-
-class LittleDog extends Dog{
-
-constructor(age,name,size){
-
-super(age,name)
-
-this.size=size
-
-}
-
- static barkk() {
-	this.bark()
-	console.log('vauucauu')}
-
-}
- 
-
-LittleDog.barkk()
-let masik=new LittleDog(1,"kutya",11)
-

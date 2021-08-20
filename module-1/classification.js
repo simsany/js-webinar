@@ -21,7 +21,7 @@ function grade(score) {
      */
     // PLACE YOUR CODE BETWEEN THIS...
     let gradeOfStudent;
-    if (!Number(score) ||score < 0 || score > 100){
+    if (!(Number(score) == score) ||score < 0 || score > 100){
         return 0
     }
     switch (true) {
