@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Static Analysis') {
             steps {
-               sh 'npm run test:module-1'
+               bat 'npm run test:module-1'
             }
         }
        }
