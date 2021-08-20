@@ -1,4 +1,4 @@
-class Calc {
+module.exports = class Calc{
     constructor(v) {
         this.v = +v;
     }
@@ -42,13 +42,11 @@ class Calc {
     toString() {
         return String(this.v);
     }
+
 }
 
-function calc(n) {
-    return new Calc(n);
-}
 
-module.exports = calc;
+
 
 /*
 console.log(calc(3).v);

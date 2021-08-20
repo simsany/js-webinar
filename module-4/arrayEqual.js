@@ -18,7 +18,7 @@ function arrayEqual(first, second) {
             :first.flat(Infinity).map(isEqual,second.flat(Infinity)).every(Boolean);        
 }
 function isEqual(item,index,arr){  
-    return arr[index] === this[index] || console.warn(`${arr[index]} is not equal to ${this[index]}`);
+    return item === this[index] || console.warn(`${item} is not equal to ${this[index]}`);
 }
 
 module.exports = arrayEqual;

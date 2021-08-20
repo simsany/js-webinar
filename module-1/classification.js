@@ -11,8 +11,7 @@
  * @returns {number} grade or 0 if any arguments are not proper
  */
 function grade(score) {
-    let gradeOfStudent;
-    /*
+      /*
      * Your task is to calculate the grade of the student
      * based on his/her score which can be found in the
      * score variable and those rules can be found in the
@@ -21,10 +20,9 @@ function grade(score) {
      * Also take into consideration the documentation of the function!
      */
     // PLACE YOUR CODE BETWEEN THIS...
+    let gradeOfStudent;
     if (!Number(score) ||score < 0 || score > 100){
         return 0
-
-
     }
     switch (true) {
         case score<60:

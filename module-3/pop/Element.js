@@ -17,20 +17,20 @@
  *       find the element
  */
 
-module.exports = class Element {
+/*module.exports = class Element {
 	constructor(name, locator) {
 		this.locator = locator
 		this.name = name
 		this.parent = null
 		this.children = {}
 	}
-	setParent = (parent) =>{ this.parent = parent }
+	setParent = (parent) => { this.parent = parent }
 
 
 
-	addChildren = (child)=>{
+	addChildren = (child) => {
 
-		 
+
 		if (this.children.hasOwnProperty(child.name)) { throw new Error() };
 		this.children[child.name] = child;
 	}
@@ -50,9 +50,11 @@ module.exports = class Element {
 				if (key == locator) {
 					locatorToReturn = obj[key]
 				}
-				//if(JSON.stringify(obj[key].children) != '{}'){
+				else {
+					if(obj[key].children.length === 0){
 					find(obj[key].children, locator)
-				//}
+				}
+				}
 			})
 
 			return locatorToReturn;
@@ -72,3 +74,40 @@ module.exports = class Element {
 
 
 }
+*/
+
+class Dog{
+constructor(age,name){
+this.age=age
+this.name=name
+
+}
+
+static bark() {
+	console.log('vau')}
+
+
+}
+
+
+
+class LittleDog extends Dog{
+
+constructor(age,name,size){
+
+super(age,name)
+
+this.size=size
+
+}
+
+ static barkk() {
+	this.bark()
+	console.log('vauucauu')}
+
+}
+ 
+
+LittleDog.barkk()
+let masik=new LittleDog(1,"kutya",11)
+
