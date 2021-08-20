@@ -10,6 +10,5 @@ async function wait() {
  */
 module.exports = function f() {
     // ...what to write here?
-	    
     return wait()
 }
