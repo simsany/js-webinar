@@ -3,7 +3,7 @@ pipeline {
     
     stages {
 	
-	stage('Static Analysis') {
+	stage('Stati') {
             steps {
                bat 'npm install'
             }
