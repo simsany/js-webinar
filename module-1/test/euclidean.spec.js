@@ -16,7 +16,7 @@ describe('Module 1 - Euclidean algorithm', () => {
         [7, 9, 1],
         [6, 9, 3],
         [683, 997, 1]
-        
+
     ];
     values.forEach(v => {
         it(`should return ${v[2]} for (${v[0]},${v[1]})`, () => {
