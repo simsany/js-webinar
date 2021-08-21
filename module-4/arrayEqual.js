@@ -11,7 +11,6 @@
  * @returns {boolean} true if the two arrays are equal,
  *                    false otherwise
  */
-
 function arrayEqual(first, second) {
     return  first.length !== second.length ? 
             console.warn(`The length of the two array are different first: ${first.length}, second: ${second.length}`) || false 
