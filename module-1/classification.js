@@ -26,7 +26,6 @@ function grade(score) {
     }
     switch (true) {
         case score<60:
-          
           gradeOfStudent = 1;
           break;
         case score<70:
