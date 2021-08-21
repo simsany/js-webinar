@@ -10,12 +10,13 @@ describe('Module 1 - Classification', () => {
         return expect(classification(-1)).to.equal(0);
     });
 
-    
+
     it("should return 0 if score is bigger than the maximum (100)", () => {
         return expect(classification(101)).to.equal(0);
     });
 
     const scores = [
+        
         [0, 1], [58, 1], [59, 1],
         [60, 2], [61, 2], [68, 2], [69, 2],
         [70, 3], [71, 3], [78, 3], [79, 3],
