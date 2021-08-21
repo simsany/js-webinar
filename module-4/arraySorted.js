@@ -15,5 +15,4 @@
 function arraySorted(items, ignore, isSorted = items.map(word => word.toString().toLowerCase().replace(new RegExp(`([${ignore}\\s])`, 'g'), "")).every((item, index, arr) => !index || item >= arr[index - 1])) {
     return isSorted
 }
-
 module.exports = arraySorted
