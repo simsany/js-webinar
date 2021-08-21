@@ -10,6 +10,7 @@ describe('Module 1 - Euclidean algorithm', () => {
         return expect(euclidean(-2, 2)).to.equal(0);
     });
     const values = [
+        
         [1, 1, 1],
         [1, 7, 1],
         [128, 16, 16],
