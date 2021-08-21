@@ -9,7 +9,6 @@ describe('Module 1 - Euclidean algorithm', () => {
     it("should return 0 if negative value passed", () => {
         return expect(euclidean(-2, 2)).to.equal(0);
     });
-
     const values = [
         [1, 1, 1],
         [1, 7, 1],
