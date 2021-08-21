@@ -15,7 +15,6 @@ describe('Module 1 - Euclidean algorithm', () => {
         [128, 16, 16],
         [7, 9, 1],
         [6, 9, 3],
-        
         [683, 997, 1]
     ];
     values.forEach(v => {
