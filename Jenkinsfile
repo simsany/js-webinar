@@ -4,6 +4,17 @@ pipeline {
     stages {
 	
 	stage('Npm install') {
+        when {
+    anyOf {
+        changeset "module-1/**"
+        changeset "module-2/**"
+        changeset "module-3/**"
+        changeset "module-4/**"
+        changeset "plus/**"
+    }
+}
+
+
             steps {
                bat 'npm install'
             }
