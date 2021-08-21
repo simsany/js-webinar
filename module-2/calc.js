@@ -28,6 +28,7 @@ module.exports = class Calc{
 
     divide(n) {
         if (n === 0) {
+            
             throw new Error('Division by 0 is not possible!');
         }
         this.v /= n;

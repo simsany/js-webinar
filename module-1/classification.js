@@ -25,6 +25,7 @@ function grade(score) {
         return 0
     }
     switch (true) {
+
       
         case score<60:
           gradeOfStudent = 1;
