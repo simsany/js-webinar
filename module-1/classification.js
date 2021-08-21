@@ -34,6 +34,7 @@ function grade(score) {
         case score<80:
           gradeOfStudent = 3;
           break;
+          
         case score<90:
           gradeOfStudent = 4;
           break;
