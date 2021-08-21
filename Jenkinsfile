@@ -11,10 +11,7 @@ pipeline {
 	
 	
         stage('module 1 tests') {
-            when 
-     {
-        changeset "module-1/**"
-    }
+            when {changeset "module-1/**"}
 
 
             steps {
