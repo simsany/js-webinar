@@ -11,6 +11,12 @@ pipeline {
 	
 	
         stage('module 1 tests') {
+            when {
+     {
+        changeset "module-1/**"
+    }
+}
+
             steps {
                bat 'npm run test:module-1'
             }
