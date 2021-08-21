@@ -11,10 +11,5 @@ function arraySum(arr) {
     return !Array.isArray(arr) || !arr.flat(Infinity).length ? 0 :
         arr.flat(Infinity).filter(Number.isInteger).reduce((a, b) => a + b);
 }
-
-
-
-
-
 module.exports = arraySum;
 
