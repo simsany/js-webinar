@@ -17,9 +17,7 @@ describe('Module 1 - Euclidean algorithm', () => {
         [6, 9, 3],
         [683, 997, 1]
 
-        
-
-    ];
+            ];
 
 
 
