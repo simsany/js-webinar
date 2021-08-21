@@ -10,6 +10,7 @@ describe('Module 1 - Classification', () => {
         return expect(classification(-1)).to.equal(0);
     });
 
+    
     it("should return 0 if score is bigger than the maximum (100)", () => {
         return expect(classification(101)).to.equal(0);
     });
