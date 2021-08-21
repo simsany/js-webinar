@@ -19,8 +19,10 @@ describe('Module 1 - Euclidean algorithm', () => {
 
     ];
 
-
     
+
+
+
     values.forEach(v => {
         it(`should return ${v[2]} for (${v[0]},${v[1]})`, () => {
             return expect(euclidean(v[0], v[1])).to.equal(v[2]);
