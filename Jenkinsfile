@@ -4,7 +4,7 @@ pipeline {
     stages {
 	
 	stage('Npm install') {
-        when {
+       /* when {
     anyOf {
         changeset "module-1/**"
         changeset "module-2/**"
@@ -13,7 +13,7 @@ pipeline {
         changeset "plus/**"
         
     }
-}
+}*/
 
 
             steps {
@@ -23,7 +23,7 @@ pipeline {
 	
 	
         stage('module 1 tests') {
-            when {changeset "module-1/**"}
+            //when {changeset "module-1/**"}
 
 
             steps {
@@ -32,21 +32,21 @@ pipeline {
         }
 		
 		stage('module 2 tests') {
-             when {changeset "module-2/**"}
+            // when {changeset "module-2/**"}
             steps {
                bat 'npm run test:module-2'
             }
         }
 		
 		stage('module 3 tests') {
-             when {changeset "module-3/**"}
+            // when {changeset "module-3/**"}
             steps {
                bat 'npm run test:module-3'
             }
         }
 		
 		stage('module 4 tests') {
-             when {changeset "module-4/**"}
+             //when {changeset "module-4/**"}
             steps {
                bat 'npm run test:module-4'
             }
@@ -56,7 +56,7 @@ pipeline {
         
 		
 		stage('module plus tests') {
-             when {changeset "plus/**"}
+            // when {changeset "plus/**"}
             steps {
                bat 'npm run test:plus'
             }
